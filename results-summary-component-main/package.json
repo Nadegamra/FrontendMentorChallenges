@@ -1,0 +1,12 @@
+{
+  "name": "results-summary-component-main",
+  "version": "1.0.0",
+  "description": "A sample results summary component",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server"
+  },
+  "keywords": [],
+  "author": "Karolis Žukauskas",
+  "license": "ISC"
+}
