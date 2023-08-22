@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            desktop: "550px",
+          },
+          extend: {
+            colors: {
+              primary1: "hsl(158, 36%, 37%)",
+              primary2: "hsl(30, 38%, 92%)",
+              neutral1: "hsl(212, 21%, 14%)",
+              neutral2: "hsl(228, 12%, 48%)",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Frontend Mentor | Product preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      /* 675px */
+    </style>
+  </head>
+  <body class="flex flex-col bg-slate-200">
+    <main
+      class="mx-auto flex flex-col desktop:flex-row h-[800px] p-5 font-[Montserrat]"
+    >
+      <img
+        class="rounded-l-md h-[400px] hidden desktop:block"
+        src="images/image-product-desktop.jpg"
+      />
+      <img
+        class="rounded-t-md block desktop:hidden"
+        src="images/image-product-mobile.jpg"
+      />
+      <section
+        class="bg-white desktop:w-60 rounded-b-md desktop:rounded-b-none desktop:rounded-r-md p-5 desktop:h-[400px]"
+      >
+        <div class="uppercase pb-4 tracking-widest">Perfume</div>
+        <div class="font-bold text-3xl leading-6">
+          Gabrielle Essence Eau De Parfum
+        </div>
+        <div class="text-[14px] py-5">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </div>
+        <span class="text-green-800 text-3xl font-bold pr-2">$149.99</span>
+        <sup class="line-through">$169.99</sup>
+        <br />
+        <button class="bg-green-800 text-white rounded-md py-2 my-4 w-full">
+          <img class="inline" src="images/icon-cart.svg" />
+          <span> Add to Cart </span>
+        </button>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
