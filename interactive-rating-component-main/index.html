@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: "hsl(25, 97%, 53%)",
+              lightGrey: "hsl(217, 12%, 63%)",
+              mediumGrey: "hsl(216, 12%, 54%)",
+              mediumBlue: "hsl(213, 19%, 25%)",
+              darkBlue: "hsl(213, 19%, 18%)",
+              veryDarkBlue: "hsl(216, 12%, 8%)",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="text-white bg-black">
+    <main>
+      <div class="bg-darkBlue p-7 w-96 rounded-2xl m-5">
+        <img
+          class="bg-mediumBlue p-3 rounded-full"
+          src="images/icon-star.svg"
+        />
+        <h1 class="text-2xl font-bold py-3">How did we do?</h1>
+        <p class="text-[15px] text-lightGrey">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div class="flex content-between my-3">
+          <button
+            class="rounded-full bg-mediumBlue hover:bg-orange focus:bg-mediumGrey text-white py-3 px-5 m-2"
+          >
+            1
+          </button>
+
+          <button
+            class="rounded-full bg-mediumBlue hover:bg-orange focus:bg-mediumGrey text-white py-3 px-5 m-2"
+          >
+            2
+          </button>
+          <button
+            class="rounded-full bg-mediumBlue hover:bg-orange focus:bg-mediumGrey text-white py-3 px-5 m-2"
+          >
+            3
+          </button>
+          <button
+            class="rounded-full bg-mediumBlue hover:bg-orange focus:bg-mediumGrey text-white py-3 px-5 m-2"
+          >
+            4
+          </button>
+          <button
+            class="rounded-full bg-mediumBlue hover:bg-orange focus:bg-mediumGrey text-white py-3 px-5 m-2"
+          >
+            5
+          </button>
+        </div>
+        <button class="w-full py-2 rounded-3xl bg-white text-orange">
+          Submit
+        </button>
+      </div>
+
+      <div class="bg-darkBlue p-5 w-96 rounded-2xl m-5">
+        <img class="my-5 mx-auto" src="images/illustration-thank-you.svg" />
+        <div
+          class="bg-mediumBlue text-orange rounded-2xl w-max mx-auto py-1 px-2"
+        >
+          You selected
+          <!-- Add rating here -->
+          out of 5
+        </div>
+        <h1 class="text-2xl text-center font-bold my-5">Thank you!</h1>
+        <p class="text-[15px] text-center mb-5 text-lightGrey">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
