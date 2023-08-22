@@ -1,6 +1,9 @@
 //Include purely in order for tailwindcss intellisense plugin to work
 export default {
   theme: {
+    screens: {
+      desktop: "550px",
+    },
     extend: {
       colors: {
         primary1: "hsl(158, 36%, 37%)",
