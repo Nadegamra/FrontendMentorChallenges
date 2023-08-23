@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orange: "hsl(25, 97%, 53%)",
+              lightGrey: "hsl(217, 12%, 63%)",
+              mediumGrey: "hsl(216, 12%, 54%)",
+              mediumBlue: "hsl(213, 19%, 25%)",
+              darkBlue: "hsl(213, 19%, 18%)",
+              veryDarkBlue: "hsl(216, 12%, 8%)",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="text-white bg-black">
+    <main class="flex items-center content-center w-full">
+      <div class="bg-darkBlue p-4 w-min rounded-2xl mx-auto my-5" id="card1">
+        <img
+          class="bg-mediumBlue p-3 rounded-full"
+          src="images/icon-star.svg"
+        />
+        <h1 class="text-2xl font-bold py-3">How did we do?</h1>
+        <p class="text-[15px] text-lightGrey">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <form
+          onsubmit="
+            document.getElementById('ratingDisp').innerHTML = this.elements.namedItem('rating').value
+            document.getElementById('card1').attributeStyleMap.set('display','none')
+            document.getElementById('card2').attributeStyleMap.set('display', 'block')
+            return false
+          "
+        >
+          <fieldset class="flex content-between my-3">
+            <input
+              type="radio"
+              id="rating1"
+              name="rating"
+              value="1"
+              class="hidden peer/1"
+            />
+            <label
+              for="rating1"
+              class="rounded-full bg-mediumBlue peer-checked/1:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              1
+            </label>
+            <input
+              type="radio"
+              id="rating2"
+              name="rating"
+              value="2"
+              class="hidden peer/2"
+            />
+            <label
+              for="rating2"
+              class="rounded-full bg-mediumBlue peer-checked/2:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              2
+            </label>
+            <input
+              type="radio"
+              id="rating3"
+              name="rating"
+              value="3"
+              class="hidden peer/3"
+            />
+            <label
+              for="rating3"
+              class="rounded-full bg-mediumBlue peer-checked/3:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              3
+            </label>
+            <input
+              type="radio"
+              id="rating4"
+              name="rating"
+              value="4"
+              class="hidden peer/4"
+            />
+            <label
+              for="rating4"
+              class="rounded-full bg-mediumBlue peer-checked/4:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              4
+            </label>
+            <input
+              type="radio"
+              id="rating5"
+              name="rating"
+              value="5"
+              class="hidden peer/5"
+            />
+            <label
+              for="rating5"
+              class="rounded-full bg-mediumBlue peer-checked/5:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              5
+            </label>
+          </fieldset>
+          <button
+            type="submit"
+            class="w-full py-2 rounded-3xl bg-white text-orange"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <div
+        class="hidden bg-darkBlue p-5 w-[350px] rounded-2xl mx-auto my-5"
+        id="card2"
+      >
+        <img class="my-5 mx-auto" src="images/illustration-thank-you.svg" />
+        <div
+          class="bg-mediumBlue text-orange rounded-2xl w-max mx-auto py-1 px-2"
+        >
+          You selected
+          <span id="ratingDisp"></span>
+          out of 5
+        </div>
+        <h1 class="text-2xl text-center font-bold my-5">Thank you!</h1>
+        <p class="text-[15px] text-center mb-5 text-lightGrey">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
