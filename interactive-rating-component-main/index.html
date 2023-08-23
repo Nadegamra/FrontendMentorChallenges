@@ -42,7 +42,7 @@
   </head>
   <body class="text-white bg-black">
     <main>
-      <div class="bg-darkBlue p-7 w-96 rounded-2xl m-5">
+      <div class="bg-darkBlue p-7 w-96 rounded-2xl m-5" id="card1">
         <img
           class="bg-mediumBlue p-3 rounded-full"
           src="images/icon-star.svg"
@@ -52,79 +52,89 @@
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <form class="flex content-between my-3">
-          <input
-            type="radio"
-            id="rating1"
-            name="rating"
-            value="1"
-            class="hidden peer/1"
-          />
-          <label
-            for="rating1"
-            class="rounded-full bg-mediumBlue peer-checked/1:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+        <form
+          onsubmit="
+          alert('You selected ' + this.elements.namedItem('rating').value + ' out of 5')
+          return false
+        "
+        >
+          <fieldset class="flex content-between my-3">
+            <input
+              type="radio"
+              id="rating1"
+              name="rating"
+              value="1"
+              class="hidden peer/1"
+            />
+            <label
+              for="rating1"
+              class="rounded-full bg-mediumBlue peer-checked/1:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              1
+            </label>
+            <input
+              type="radio"
+              id="rating2"
+              name="rating"
+              value="2"
+              class="hidden peer/2"
+            />
+            <label
+              for="rating2"
+              class="rounded-full bg-mediumBlue peer-checked/2:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              2
+            </label>
+            <input
+              type="radio"
+              id="rating3"
+              name="rating"
+              value="3"
+              class="hidden peer/3"
+            />
+            <label
+              for="rating3"
+              class="rounded-full bg-mediumBlue peer-checked/3:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              3
+            </label>
+            <input
+              type="radio"
+              id="rating4"
+              name="rating"
+              value="4"
+              class="hidden peer/4"
+            />
+            <label
+              for="rating4"
+              class="rounded-full bg-mediumBlue peer-checked/4:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              4
+            </label>
+            <input
+              type="radio"
+              id="rating5"
+              name="rating"
+              value="5"
+              class="hidden peer/5"
+            />
+            <label
+              for="rating5"
+              class="rounded-full bg-mediumBlue peer-checked/5:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
+            >
+              5
+            </label>
+          </fieldset>
+          <button
+            type="submit"
+            class="w-full py-2 rounded-3xl bg-white text-orange"
           >
-            1
-          </label>
-          <input
-            type="radio"
-            id="rating2"
-            name="rating"
-            value="2"
-            class="hidden peer/2"
-          />
-          <label
-            for="rating2"
-            class="rounded-full bg-mediumBlue peer-checked/2:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
-          >
-            2
-          </label>
-          <input
-            type="radio"
-            id="rating3"
-            name="rating"
-            value="3"
-            class="hidden peer/3"
-          />
-          <label
-            for="rating3"
-            class="rounded-full bg-mediumBlue peer-checked/3:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
-          >
-            3
-          </label>
-          <input
-            type="radio"
-            id="rating4"
-            name="rating"
-            value="4"
-            class="hidden peer/4"
-          />
-          <label
-            for="rating4"
-            class="rounded-full bg-mediumBlue peer-checked/4:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
-          >
-            4
-          </label>
-          <input
-            type="radio"
-            id="rating5"
-            name="rating"
-            value="5"
-            class="hidden peer/5"
-          />
-          <label
-            for="rating5"
-            class="rounded-full bg-mediumBlue peer-checked/5:bg-mediumGrey hover:bg-orange text-white py-3 px-5 m-2"
-          >
-            5
-          </label>
+            Submit
+          </button>
         </form>
-        <button class="w-full py-2 rounded-3xl bg-white text-orange">
-          Submit
-        </button>
       </div>
 
-      <div class="bg-darkBlue p-5 w-96 rounded-2xl m-5">
+      <div class="bg-darkBlue p-5 w-96 rounded-2xl m-5" id="card2">
         <img class="my-5 mx-auto" src="images/illustration-thank-you.svg" />
         <div
           class="bg-mediumBlue text-orange rounded-2xl w-max mx-auto py-1 px-2"
