@@ -45,8 +45,21 @@
   </head>
   <body class="bg-mainBg text-white">
     <main class="bg-cardBg w-[350px] m-3 rounded-2xl p-4">
-      <img class="w-[325px] rounded-lg" src="images/image-equilibrium.jpg" />
-      <h1 class="font-bold text-2xl py-4">Equilibrium #3429</h1>
+      <div class="group cursor-pointer">
+        <div class="flex w-[319px] h-[319px] absolute">
+          <div
+            class="absolute w-full h-full bg-cyan opacity-0 group-hover:opacity-30"
+          ></div>
+          <img
+            class="m-auto z-50 opacity-0 group-hover:opacity-100"
+            src="images/icon-view.svg"
+          />
+        </div>
+        <img class="w-[325px] rounded-lg" src="images/image-equilibrium.jpg" />
+      </div>
+      <h1 class="font-bold text-2xl py-4 hover:text-cyan cursor-pointer">
+        Equilibrium #3429
+      </h1>
       <p class="text-[18px] text-lineCol pb-4 text-textColor">
         Our Equilibrium collection promotes balance and calm.
       </p>
