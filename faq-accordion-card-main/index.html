@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            content: {
+              "bg-pattern-desktop": 'url("images/bg-pattern-desktop.svg")',
+              "bg-pattern-mobile": 'url("images/bg-pattern-mobile.svg")',
+              "icon-arrow-down": 'url("images/icon-arrow-down.svg")',
+              "illustration-desktop":
+                'url("images/illustration-woman-online-desktop.svg")',
+              "illustration-mobile":
+                'url("images/illustration-woman-online-mobile.svg")',
+            },
+            colors: {
+              veryDarkDesatBlue: "hsl(238, 29%, 16%)",
+              softRed: "hsl(14, 88%, 65%)",
+              softViolet: "hsl(273, 75%, 66%)",
+              softBlue: "hsl(240, 73%, 65%)",
+              veryDarkGrayishBlue: "hsl(237, 12%, 33%)",
+              darkGrayishBlue: "hsl(240, 6%, 50%)",
+              dividerColor: "hsl(240, 5%, 91%)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="flex flex-col content-center items-center">
+    <div
+      class="absolute w-screen h-screen bg-gradient-to-b from-softViolet to-softBlue bg-no-repeat"
+    ></div>
+    <section>
+      <img
+        class="absolute translate-x-[-95px] translate-y-[320px] z-20"
+        src="images/illustration-box-desktop.svg"
+      />
+
+      <section
+        class="relative flex flex-row bg-white w-[750px] my-32 rounded-2xl z-10 h-[500px] before:absolute before:content-illustration-desktop before:translate-x-[-80px] before:translate-y-[50px] after:content-bg-pattern-desktop after:absolute after:translate-y-[-400px] after:translate-x-[-650px] after:p-20 before:z-10 overflow-hidden"
+      >
+        <div class="flex-[5]"></div>
+        <main class="flex-[3] p-14">
+          <h1 class="font-bold">FAQ</h1>
+          <div>How many team members can I invite?</div>
+          <div class="hidden">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </div>
+
+          <div>What is the maximum file upload size?</div>
+          <div class="hidden">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </div>
+
+          <div>How do I reset my password?</div>
+          <div class="hidden">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </div>
+
+          <div>Can I cancel my subscription?</div>
+          <div class="hidden">
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </div>
+
+          <div>Do you provide additional support?</div>
+          <div>
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </div>
+        </main>
+      </section>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
