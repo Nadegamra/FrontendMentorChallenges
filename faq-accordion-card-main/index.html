@@ -41,7 +41,6 @@
         },
       };
     </script>
-
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -51,7 +50,23 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+      button {
+        background-color: white !important;
+        color: black !important;
+      }
     </style>
+    <script>
+      const toggleDisplay = (contentId, headerId, arrowId) => {
+        let val = document.getElementById(contentId).style.display;
+        document.getElementById(contentId).style.display =
+          val === "none" ? "block" : "none";
+        document.getElementById(headerId).style.fontWeight =
+          val === "none" ? "bold" : "normal";
+        let rot = document.getElementById(arrowId).style.rotate;
+        document.getElementById(arrowId).style.rotate =
+          rot === "180deg" ? "0deg" : "180deg";
+      };
+    </script>
   </head>
   <body class="flex flex-col content-center items-center">
     <div
@@ -69,36 +84,55 @@
         <div class="flex-1"></div>
         <main class="flex-1 p-14 px-24">
           <h1 class="font-bold text-3xl pb-5">FAQ</h1>
-          <div class="py-4">How many team members can I invite?</div>
-          <div class="hidden">
-            You can invite up to 2 additional users on the Free plan. There is
-            no limit on team members for the Premium plan.
+
+          <div class="accordion-container">
+            <h2 class="flex items-center py-4 font-bold">
+              <button
+                id="header1"
+                type="button"
+                onclick="toggleDisplay('item1', 'header1', 'arrow1')"
+              >
+                How many team members can I invite?
+              </button>
+              <span class="flex-1"></span>
+              <img
+                id="arrow1"
+                class="inline"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <div id="item1">
+              <p class="">
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </div>
+            <hr />
+            <div class="py-4">What is the maximum file upload size?</div>
+            <div class="hidden">
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </div>
+            <hr />
+            <div class="py-4">How do I reset my password?</div>
+            <div class="hidden">
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </div>
+            <hr />
+            <div class="py-4">Can I cancel my subscription?</div>
+            <div class="hidden">
+              Yes! Send us a message and we'll process your request no questions
+              asked.
+            </div>
+            <hr />
+            <div class="py-4">Do you provide additional support?</div>
+            <div class="hidden">
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
+            </div>
+            <hr />
           </div>
-          <hr />
-          <div class="py-4">What is the maximum file upload size?</div>
-          <div class="hidden">
-            No more than 2GB. All files in your account must fit your allotted
-            storage space.
-          </div>
-          <hr />
-          <div class="py-4">How do I reset my password?</div>
-          <div class="hidden">
-            Click “Forgot password” from the login page or “Change password”
-            from your profile page. A reset link will be emailed to you.
-          </div>
-          <hr />
-          <div class="py-4">Can I cancel my subscription?</div>
-          <div class="hidden">
-            Yes! Send us a message and we’ll process your request no questions
-            asked.
-          </div>
-          <hr />
-          <div class="py-4">Do you provide additional support?</div>
-          <div class="hidden">
-            Chat and email support is available 24/7. Phone lines are open
-            during normal business hours.
-          </div>
-          <hr />
         </main>
       </section>
     </section>
