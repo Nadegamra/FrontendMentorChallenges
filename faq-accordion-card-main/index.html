@@ -58,13 +58,29 @@
     <script>
       const toggleDisplay = (contentId, headerId, arrowId) => {
         let val = document.getElementById(contentId).style.display;
-        document.getElementById(contentId).style.display =
-          val === "none" ? "block" : "none";
-        document.getElementById(headerId).style.fontWeight =
-          val === "none" ? "bold" : "normal";
         let rot = document.getElementById(arrowId).style.rotate;
-        document.getElementById(arrowId).style.rotate =
-          rot === "180deg" ? "0deg" : "180deg";
+
+        for (const el of document.getElementsByClassName("ac-content")) {
+          if (el.id !== contentId) {
+            el.style.display = "none";
+          } else {
+            el.style.display = val === "none" ? "block" : "none";
+          }
+        }
+        for (const el of document.getElementsByClassName("ac-header")) {
+          if (el.id !== headerId) {
+            el.style.fontWeight = "normal";
+          } else {
+            el.style.fontWeight = val === "none" ? "bold" : "normal";
+          }
+        }
+        for (const el of document.getElementsByClassName("ac-arrow")) {
+          if (el.id !== arrowId) {
+            el.style.rotate = "0deg";
+          } else {
+            el.style.rotate = rot === "180deg" ? "0deg" : "180deg";
+          }
+        }
       };
     </script>
   </head>
@@ -85,52 +101,119 @@
         <main class="flex-1 p-14 px-24">
           <h1 class="font-bold text-3xl pb-5">FAQ</h1>
 
-          <div class="accordion-container">
-            <h2 class="flex items-center py-4 font-bold">
-              <button
-                id="header1"
-                type="button"
-                onclick="toggleDisplay('item1', 'header1', 'arrow1')"
-              >
-                How many team members can I invite?
-              </button>
+          <div>
+            <h2
+              id="header1"
+              onclick="toggleDisplay('item1', 'header1', 'arrow1')"
+              class="ac-header flex items-center py-4 font-bold select-none cursor-pointer"
+            >
+              How many team members can I invite?
               <span class="flex-1"></span>
               <img
                 id="arrow1"
-                class="inline"
+                class="ac-arrow inline"
                 src="images/icon-arrow-down.svg"
               />
             </h2>
-            <div id="item1">
-              <p class="">
-                You can invite up to 2 additional users on the Free plan. There
-                is no limit on team members for the Premium plan.
-              </p>
-            </div>
+            <p
+              id="item1"
+              class="ac-content text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+
             <hr />
-            <div class="py-4">What is the maximum file upload size?</div>
-            <div class="hidden">
+
+            <h2
+              id="header2"
+              onclick="toggleDisplay('item2', 'header2', 'arrow2')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer"
+            >
+              What is the maximum file upload size?
+              <span class="flex-1"></span>
+              <img
+                id="arrow2"
+                class="ac-arrow inline"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <p
+              id="item2"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
               No more than 2GB. All files in your account must fit your allotted
               storage space.
-            </div>
+            </p>
+
             <hr />
-            <div class="py-4">How do I reset my password?</div>
-            <div class="hidden">
+
+            <div
+              id="header3"
+              onclick="toggleDisplay('item3', 'header3', 'arrow3')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer"
+            >
+              How do I reset my password?
+              <span class="flex-1"></span>
+              <img
+                id="arrow3"
+                class="ac-arrow inline"
+                src="images/icon-arrow-down.svg"
+              />
+            </div>
+            <p
+              id="item3"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
               Click “Forgot password” from the login page or “Change password”
               from your profile page. A reset link will be emailed to you.
-            </div>
+            </p>
+
             <hr />
-            <div class="py-4">Can I cancel my subscription?</div>
-            <div class="hidden">
+
+            <div
+              id="header4"
+              onclick="toggleDisplay('item4', 'header4', 'arrow4')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer"
+            >
+              Can I cancel my subscription?
+              <span class="flex-1"></span>
+              <img
+                id="arrow4"
+                class="ac-arrow inline"
+                src="images/icon-arrow-down.svg"
+              />
+            </div>
+            <p
+              id="item4"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
               Yes! Send us a message and we'll process your request no questions
               asked.
-            </div>
+            </p>
+
             <hr />
-            <div class="py-4">Do you provide additional support?</div>
-            <div class="hidden">
+
+            <div
+              id="header5"
+              onclick="toggleDisplay('item5', 'header5', 'arrow5')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer"
+            >
+              Do you provide additional support?
+              <span class="flex-1"></span>
+              <img
+                id="arrow5"
+                class="ac-arrow inline"
+                src="images/icon-arrow-down.svg"
+              />
+            </div>
+            <p
+              id="item5"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
               Chat and email support is available 24/7. Phone lines are open
               during normal business hours.
-            </div>
+            </p>
             <hr />
           </div>
         </main>
