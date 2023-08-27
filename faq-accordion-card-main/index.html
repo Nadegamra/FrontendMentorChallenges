@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            desktop: "1000px",
+          },
+          extend: {
+            content: {
+              "bg-pattern-desktop": 'url("images/bg-pattern-desktop.svg")',
+              "bg-pattern-mobile": 'url("images/bg-pattern-mobile.svg")',
+              "icon-arrow-down": 'url("images/icon-arrow-down.svg")',
+              "illustration-desktop":
+                'url("images/illustration-woman-online-desktop.svg")',
+              "illustration-mobile":
+                'url("images/illustration-woman-online-mobile.svg")',
+            },
+            colors: {
+              veryDarkDesatBlue: "hsl(238, 29%, 16%)",
+              softRed: "hsl(14, 88%, 65%)",
+              softViolet: "hsl(273, 75%, 66%)",
+              softBlue: "hsl(240, 73%, 65%)",
+              veryDarkGrayishBlue: "hsl(237, 12%, 33%)",
+              darkGrayishBlue: "hsl(240, 6%, 50%)",
+              dividerColor: "hsl(240, 5%, 91%)",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      button {
+        background-color: white !important;
+        color: black !important;
+      }
+    </style>
+    <script>
+      const toggleDisplay = (contentId, headerId, arrowId) => {
+        let val = document.getElementById(contentId).style.display;
+        let rot = document.getElementById(arrowId).style.rotate;
+
+        for (const el of document.getElementsByClassName("ac-content")) {
+          el.style.display = "none";
+          if (el.id === contentId) {
+            el.style.display = val === "none" ? "block" : "none";
+          }
+        }
+        for (const el of document.getElementsByClassName("ac-header")) {
+          el.style.fontWeight = "normal";
+          if (el.id === headerId) {
+            el.style.fontWeight = val === "none" ? "bold" : "normal";
+          }
+        }
+        for (const el of document.getElementsByClassName("ac-arrow")) {
+          el.style.rotate = "0deg";
+          if (el.id === arrowId) {
+            el.style.rotate = rot === "180deg" ? "0deg" : "180deg";
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="flex flex-col content-center items-center">
+    <div
+      class="absolute w-screen h-screen bg-gradient-to-b from-softViolet to-softBlue bg-no-repeat"
+    ></div>
+    <section>
+      <img
+        class="hidden desktop:block absolute translate-x-[-95px] translate-y-[415px] z-20"
+        src="images/illustration-box-desktop.svg"
+      />
+
+      <section
+        class="relative flex flex-col desktop:flex-row bg-white w-[350px] desktop:w-[900px] mt-48 rounded-2xl z-10 desktop:h-[500px] before:w-[300px] desktop:before:w-auto before:h-[300px] desktop:before:h-auto before:absolute before:content-illustration-mobile desktop:before:content-illustration-desktop before:translate-x-[20px] desktop:before:translate-x-[-80px] before:translate-y-[-135px] desktop:before:translate-y-[80px] after:content-bg-pattern-mobile desktop:after:content-bg-pattern-desktop after:absolute after:translate-y-[10px] desktop:after:translate-y-[-300px] after:translate-x-[50px] desktop:after:translate-x-[-570px] before:z-10 desktop:overflow-hidden"
+      >
+        <div class="flex-1"></div>
+        <main class="flex-1 p-14 px-5 desktop:px-24 pt-36 desktop:pt-14">
+          <h1 class="font-bold text-3xl pb-5 text-center desktop:text-left">
+            FAQ
+          </h1>
+          <div>
+            <h2
+              id="header1"
+              onclick="toggleDisplay('item1', 'header1', 'arrow1')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer text-sm hover:text-softRed"
+            >
+              How many team members can I invite?
+              <span class="flex-1"></span>
+              <img
+                id="arrow1"
+                class="ac-arrow inline desktop:mr-3"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <p
+              id="item1"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+
+            <hr />
+
+            <h2
+              id="header2"
+              onclick="toggleDisplay('item2', 'header2', 'arrow2')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer text-sm hover:text-softRed"
+            >
+              What is the maximum file upload size?
+              <span class="flex-1"></span>
+              <img
+                id="arrow2"
+                class="ac-arrow inline desktop:mr-3"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <p
+              id="item2"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </p>
+
+            <hr />
+
+            <h2
+              id="header3"
+              onclick="toggleDisplay('item3', 'header3', 'arrow3')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer text-sm hover:text-softRed"
+            >
+              How do I reset my password?
+              <span class="flex-1"></span>
+              <img
+                id="arrow3"
+                class="ac-arrow inline desktop:mr-3"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <p
+              id="item3"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </p>
+
+            <hr />
+
+            <h2
+              id="header4"
+              onclick="toggleDisplay('item4', 'header4', 'arrow4')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer text-sm hover:text-softRed"
+            >
+              Can I cancel my subscription?
+              <span class="flex-1"></span>
+              <img
+                id="arrow4"
+                class="ac-arrow inline desktop:mr-3"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <p
+              id="item4"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
+              Yes! Send us a message and we'll process your request no questions
+              asked.
+            </p>
+
+            <hr />
+
+            <h2
+              id="header5"
+              onclick="toggleDisplay('item5', 'header5', 'arrow5')"
+              class="ac-header flex items-center py-4 select-none cursor-pointer text-sm hover:text-softRed"
+            >
+              Do you provide additional support?
+              <span class="flex-1"></span>
+              <img
+                id="arrow5"
+                class="ac-arrow inline desktop:mr-3"
+                src="images/icon-arrow-down.svg"
+              />
+            </h2>
+            <p
+              id="item5"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
+            >
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
+            </p>
+            <hr />
+          </div>
+        </main>
+      </section>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script>
+      toggleDisplay("item2", "header2", "arrow2");
+      toggleDisplay("item1", "header1", "arrow1");
+    </script>
+  </body>
+</html>
