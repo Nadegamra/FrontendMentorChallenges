@@ -61,23 +61,20 @@
         let rot = document.getElementById(arrowId).style.rotate;
 
         for (const el of document.getElementsByClassName("ac-content")) {
-          if (el.id !== contentId) {
-            el.style.display = "none";
-          } else {
+          el.style.display = "none";
+          if (el.id === contentId) {
             el.style.display = val === "none" ? "block" : "none";
           }
         }
         for (const el of document.getElementsByClassName("ac-header")) {
-          if (el.id !== headerId) {
-            el.style.fontWeight = "normal";
-          } else {
+          el.style.fontWeight = "normal";
+          if (el.id === headerId) {
             el.style.fontWeight = val === "none" ? "bold" : "normal";
           }
         }
         for (const el of document.getElementsByClassName("ac-arrow")) {
-          if (el.id !== arrowId) {
-            el.style.rotate = "0deg";
-          } else {
+          el.style.rotate = "0deg";
+          if (el.id === arrowId) {
             el.style.rotate = rot === "180deg" ? "0deg" : "180deg";
           }
         }
@@ -100,12 +97,11 @@
         <div class="flex-1"></div>
         <main class="flex-1 p-14 px-24">
           <h1 class="font-bold text-3xl pb-5">FAQ</h1>
-
           <div>
             <h2
               id="header1"
               onclick="toggleDisplay('item1', 'header1', 'arrow1')"
-              class="ac-header flex items-center py-4 font-bold select-none cursor-pointer"
+              class="ac-header flex items-center py-4 select-none cursor-pointer"
             >
               How many team members can I invite?
               <span class="flex-1"></span>
@@ -117,7 +113,7 @@
             </h2>
             <p
               id="item1"
-              class="ac-content text-veryDarkGrayishBlue text-[12px] pb-4"
+              class="ac-content hidden text-veryDarkGrayishBlue text-[12px] pb-4"
             >
               You can invite up to 2 additional users on the Free plan. There is
               no limit on team members for the Premium plan.
@@ -226,5 +222,9 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+    <script>
+      toggleDisplay("item2", "header2", "arrow2");
+      toggleDisplay("item1", "header1", "arrow1");
+    </script>
   </body>
 </html>
