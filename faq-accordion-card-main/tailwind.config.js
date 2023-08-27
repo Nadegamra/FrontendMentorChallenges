@@ -1,5 +1,8 @@
 export default {
   theme: {
+    screens: {
+      desktop: "1000px",
+    },
     extend: {
       content: {
         "bg-pattern-desktop": 'url("images/bg-pattern-desktop.svg")',
