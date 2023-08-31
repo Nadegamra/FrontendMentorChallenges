@@ -7,6 +7,8 @@ export default {
       content: {
         bgBottomDesktop: 'url("images/bg-pattern-bottom-desktop.svg")',
         bgTopDesktop: 'url("images/bg-pattern-top-desktop.svg")',
+        bgBottomMobile: 'url("images/bg-pattern-bottom-mobile.svg")',
+        bgTopMobile: 'url("images/bg-pattern-top-mobile.svg")',
       },
       colors: {
         veryDarkMagenta: "hsl(300, 43%, 22%)",

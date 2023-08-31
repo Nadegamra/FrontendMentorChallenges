@@ -25,6 +25,8 @@
             content: {
               bgBottomDesktop: 'url("images/bg-pattern-bottom-desktop.svg")',
               bgTopDesktop: 'url("images/bg-pattern-top-desktop.svg")',
+              bgBottomMobile: 'url("images/bg-pattern-bottom-mobile.svg")',
+              bgTopMobile: 'url("images/bg-pattern-top-mobile.svg")',
             },
             colors: {
               veryDarkMagenta: "hsl(300, 43%, 22%)",
@@ -50,12 +52,12 @@
   </head>
   <body class="text-[15px]">
     <main
-      class="relative flex flex-col p-5 desktop:p-20 desktop:w-[1250px] mx-auto my-10 before:content-bgTopDesktop before:absolute before:z-10 before:top-[0px] after:absolute after:content-bgBottomDesktop after:z-10 after:bottom-[-40px] after:right-[-100px] overflow-hidden"
+      class="relative flex flex-col p-5 desktop:p-20 desktop:w-[1250px] mx-auto my-10 before:content-bgTopMobile desktop:before:content-bgTopDesktop before:absolute before:z-10 before:top-[-50px] desktop:before:top-[0px] after:absolute after:content-bgBottomMobile desktop:after:content-bgBottomDesktop after:z-10 after:bottom-[-40px] after:right-[-100px]"
     >
       <section class="flex flex-col desktop:flex-row mb-20 z-20">
         <section class="desktop:mr-40">
           <h1
-            class="text-5xl text-veryDarkMagenta font-bold w-[350px] mx-auto desktop:mx-0 text-center desktop:text-left"
+            class="text-4xl text-veryDarkMagenta font-bold w-[350px] mx-auto desktop:mx-0 text-center desktop:text-left"
           >
             10,000+ of our users love our products.
           </h1>
